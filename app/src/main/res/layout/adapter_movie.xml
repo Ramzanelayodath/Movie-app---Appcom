@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="model"
+            type="com.example.movieapp.data.Movies" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <ImageView
+            android:id="@+id/img_movie"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:imageUrl="@{model.movie_image}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/img_movie"
+            android:text="@{model.movie_name}"
+            android:textSize="20dp"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/purple_200"
+            android:textStyle="bold"
+            android:id="@+id/txt_movieName" />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/img_movie"
+            android:layout_below="@id/txt_movieName"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:rating="@{model.movie_rating}"
+            android:id="@+id/ratingbar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{model.movie_description}"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/img_movie"
+            android:layout_below="@id/ratingbar"
+            android:id="@+id/txt_desc" />
+
+
+    </RelativeLayout>
+</layout>
